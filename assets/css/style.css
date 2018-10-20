@@ -1,0 +1,12 @@
+body{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MBTA_1101_with_GO_coaches_at_South_Station%2C_March_1979.jpg/1200px-MBTA_1101_with_GO_coaches_at_South_Station%2C_March_1979.jpg);
+  background-size: cover;
+}
+
+table{
+  background-color: white;
+}
+
+.fa-trash-alt{
+  cursor: pointer;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title></title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS IMPORTS -->
+
+  <!-- Materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- FontAwesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <!-- Animate.CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+    crossorigin="anonymous">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+
+  <!-- JAVASCRIPT & JQUERY IMPORTS-->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDreHbFMtTOoeY-mlyIJDDHUE9s2-a8j1c",
+      authDomain: "fir-project-9daca.firebaseapp.com",
+      databaseURL: "https://fir-project-9daca.firebaseio.com",
+      projectId: "fir-project-9daca",
+      storageBucket: "fir-project-9daca.appspot.com",
+      messagingSenderId: "942629520338"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- Moment.js -->
+  <script src="assets/js/moment.js"></script>
+  <!-- Javascript -->
+  <script src="./assets/js/app.js"></script>
+</head>
+
+<body>
+  <!-- Navbar Start -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Firebase Train Scheduler App</a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Main Start -->
+  <div class="container">
+    <!-- Intro Card Start -->
+    <div class="col s12 m7">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>Below is a table of trains, where you can see arrival and departure times!</p>
+            <br/>
+            <p>Click on the "Add" button to add a new train to the table!</p>
+          </div>
+          <div class="card-action">
+            <!-- Modal Trigger -->
+            <button data-target="modal1" class="btn red lighten-2 modal-trigger">Add</button>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Add a train!</h4>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="trainName" type="text" class="validate">
+                        <label for="trainName">Train Name</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="destName" type="text" class="validate">
+                        <label for="destName">Destination</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="firstTime" type="text" class="timepicker">
+                        <label for="firstTime">First Departure</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="freq" type="text" class="validate">
+                        <label for="freq">Frequency (In Minutes)</label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Save</a>
+              </div>
+            </div>
+          
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Intro Card End -->
+
+    <!-- Table Start -->
+    <table class="striped centered">
+      <thead>
+        <tr>
+          <th>Train Name</th>
+          <th>Destination</th>
+          <th>Frequency</th>
+          <th>Next Arrival</th>
+          <th>Time Until Arrival</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+
+      <tbody class="trainTable">
+      </tbody>
+    </table>
+    <!-- Table End -->
+
+    
+  </div>
+
+
+</body>
+
+</html>
